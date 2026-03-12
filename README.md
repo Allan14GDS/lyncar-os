@@ -8,10 +8,10 @@ Este projeto utiliza o que há de mais moderno e performático no ecossistema de
 
 - **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
-- **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/) (Poder absoluto em estilização utilitária)
-- **Componentes de UI:** [shadcn/ui](https://ui.shadcn.com/) (Componentes acessíveis, modernos e totalmente customizáveis)
-- **Banco de Dados Híbrido:** [Supabase](https://supabase.com/) (PostgreSQL com suporte a JSONB para armazenamento NoSQL flexível)
-- **Autenticação:** Supabase Auth com SSR (Segurança de ponta a ponta)
+- **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Componentes de UI:** [shadcn/ui](https://ui.shadcn.com/) e [Lucide React](https://lucide.dev/) para ícones.
+- **Banco de Dados Híbrido:** [Supabase](https://supabase.com/) (PostgreSQL com suporte a JSONB)
+- **Autenticação:** Supabase Auth com persistência de sessão.
 
 ## 🏛️ Arquitetura do Banco de Dados (Híbrida)
 
@@ -22,10 +22,11 @@ O diferencial técnico do Lyncar é a sua **Arquitetura de Banco de Dados Híbri
 
 ## ✨ Funcionalidades Atuais
 
-- **Interface Premium Base:** Layout escuro responsivo configurado.
-- **Tela de Autenticação:** Design da página de login (`/login`) estruturado com componentes acessíveis.
-- **Integração Real com Banco de Dados:** Conexão Server-Side direta e segura com o Supabase utilizando `@supabase/ssr`.
-- **Dashboard Dinâmico:** Leitura em tempo real dos projetos e entregáveis do banco de dados, transformando os dados brutos da coluna `JSONB` em elementos visuais (ex: renderização automática de paletas de cores aprovadas e botões de acesso a links externos do Figma).
+- **Interface Premium Base:** Layout escuro (Dark Mode) responsivo configurado.
+- **Autenticação Real:** Fluxo completo de Login e Logout integrado ao Supabase Auth, permitindo acesso apenas a usuários cadastrados.
+- **Sidebar de Navegação:** Barra lateral profissional com navegação entre Dashboard, Projetos e Configurações.
+- **Integração com Banco de Dados:** Conexão Server-Side direta e segura com o Supabase utilizando `@supabase/ssr`.
+- **Dashboard Dinâmico:** Leitura em tempo real de projetos e entregáveis, transformando dados `JSONB` em elementos visuais (renderização de paletas de cores, comentários e links externos).
 
 ## 🎨 Interface e Experiência
 
