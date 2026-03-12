@@ -6,12 +6,12 @@ O **Lyncar** é um SaaS (Software as a Service) premium focado na gestão de rel
 
 Este projeto utiliza o que há de mais moderno e performático no ecossistema de desenvolvimento web em 2026:
 
-- **Framework:** [Next.js 15+](https://nextjs.org/) (App Router)
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
 - **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/) (Poder absoluto em estilização utilitária)
 - **Componentes de UI:** [shadcn/ui](https://ui.shadcn.com/) (Componentes acessíveis, modernos e totalmente customizáveis)
 - **Banco de Dados Híbrido:** [Supabase](https://supabase.com/) (PostgreSQL com suporte a JSONB para armazenamento NoSQL flexível)
-- **Autenticação:** Supabase Auth (Segurança de ponta a ponta)
+- **Autenticação:** Supabase Auth com SSR (Segurança de ponta a ponta)
 
 ## 🏛️ Arquitetura do Banco de Dados (Híbrida)
 
@@ -19,6 +19,13 @@ O diferencial técnico do Lyncar é a sua **Arquitetura de Banco de Dados Híbri
 
 1.  **SQL Estruturado (Relacional):** Para garantir a integridade de dados fundamentais como `Agencias`, `Clientes` e `Projetos`.
 2.  **JSONB (NoSQL Flexível):** A tabela de `Entregáveis` utiliza uma coluna JSONB. Isso permite que cada projeto tenha tipos de entrega únicos (links do Figma, arquivos PDF, faturas, blocos de texto) sem a necessidade de criar dezenas de tabelas ou colunas nulas.
+
+## ✨ Funcionalidades Atuais
+
+- **Interface Premium Base:** Layout escuro responsivo configurado.
+- **Tela de Autenticação:** Design da página de login (`/login`) estruturado com componentes acessíveis.
+- **Integração Real com Banco de Dados:** Conexão Server-Side direta e segura com o Supabase utilizando `@supabase/ssr`.
+- **Dashboard Dinâmico:** Leitura em tempo real dos projetos e entregáveis do banco de dados, transformando os dados brutos da coluna `JSONB` em elementos visuais (ex: renderização automática de paletas de cores aprovadas e botões de acesso a links externos do Figma).
 
 ## 🎨 Interface e Experiência
 
@@ -33,7 +40,7 @@ A interface foi construída seguindo princípios de design premium:
 1.  **Clone o repositório:**
 
     ```bash
-    git clone [https://github.com/SEU_USUARIO/lyncar-os.git](https://github.com/SEU_USUARIO/lyncar-os.git)
+    git clone [https://github.com/Allan14GDS/lyncar-os.git](https://github.com/Allan14GDS/lyncar-os.git)
     ```
 
 2.  **Instale as dependências:**
