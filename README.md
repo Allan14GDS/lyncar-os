@@ -21,12 +21,20 @@ O diferencial técnico do Lyncar é a sua **Arquitetura de Banco de Dados Híbri
 1.  **SQL Estruturado (Relacional):** Para garantir a integridade de dados fundamentais como `Agencias`, `Clientes` e `Projetos`.
 2.  **JSONB (NoSQL Flexível):** A tabela de `Entregáveis` utiliza uma coluna JSONB. Isso permite que cada projeto tenha tipos de entrega únicos (links do Figma, vídeos do YouTube, arquivos PDF) sem a necessidade de criar dezenas de tabelas ou colunas nulas.
 
-## ✨ Funcionalidades Atuais
+## ✨ Funcionalidades Principais
 
-- **Autenticação e Segurança:** Fluxo completo de Login/Logout integrado ao Supabase Auth com proteção de rotas.
+**Gestão e Inteligência (Novidades):**
+
+- **Dashboard Analítico:** Painel de inteligência de negócios com métricas em tempo real (Total de Projetos, Em Andamento, Entregues).
+- **Portal do Cliente (Read-only):** Geração de links mágicos (`/portal/[id]`) para os clientes finais acessarem os materiais de forma segura, com uma interface premium e livre de distrações.
+- **Ciclo de Vida do Projeto:** Gestão completa (CRUD) permitindo editar nomes, alterar status dinâmicos (Ativo, Em Pausa, Concluído) e uma "Danger Zone" para exclusão segura do projeto e seus dados.
+
+**Core (Base Sólida):**
+
+- **Autenticação e Segurança:** Fluxo completo de Login/Logout integrado ao Supabase Auth com proteção de rotas privadas e públicas.
 - **Arquitetura Multi-Tenant:** Isolamento de dados no banco, garantindo que o usuário visualize e gerencie apenas os seus projetos.
 - **Rotas Dinâmicas de Espaço de Trabalho:** Geração automática de páginas exclusivas para cada projeto (`/projetos/[id]`).
-- **Gestão de Entregáveis:** Adição de links externos e materiais de aprovação salvos em tempo real.
+- **Gestão de Entregáveis:** Adição, edição e remoção de links externos e materiais de aprovação salvos em tempo real.
 - **Sidebar Dinâmica:** Barra lateral profissional com Active States (identificação inteligente da página atual) e integração de marca visual própria.
 
 ## 🎨 Interface e Experiência (UX/UI Premium)
