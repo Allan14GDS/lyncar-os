@@ -10,6 +10,7 @@ Este projeto utiliza o que há de mais moderno e performático no ecossistema de
 - **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
 - **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Componentes de UI:** [shadcn/ui](https://ui.shadcn.com/) e [Lucide React](https://lucide.dev/) para ícones.
+- **Feedback Visual:** [Sonner](https://sonner.emilkowal.ski/) para notificações Toast de alta performance.
 - **Banco de Dados Híbrido:** [Supabase](https://supabase.com/) (PostgreSQL com suporte a JSONB)
 - **Autenticação:** Supabase Auth com persistência de sessão.
 
@@ -18,26 +19,25 @@ Este projeto utiliza o que há de mais moderno e performático no ecossistema de
 O diferencial técnico do Lyncar é a sua **Arquitetura de Banco de Dados Híbrida**. Em vez de ficarmos presos apenas ao SQL rígido, combinamos o melhor dos dois mundos:
 
 1.  **SQL Estruturado (Relacional):** Para garantir a integridade de dados fundamentais como `Agencias`, `Clientes` e `Projetos`.
-2.  **JSONB (NoSQL Flexível):** A tabela de `Entregáveis` utiliza uma coluna JSONB. Isso permite que cada projeto tenha tipos de entrega únicos (links do Figma, vídeos do YouTube, arquivos PDF, faturas, blocos de texto) sem a necessidade de criar dezenas de tabelas ou colunas nulas.
+2.  **JSONB (NoSQL Flexível):** A tabela de `Entregáveis` utiliza uma coluna JSONB. Isso permite que cada projeto tenha tipos de entrega únicos (links do Figma, vídeos do YouTube, arquivos PDF) sem a necessidade de criar dezenas de tabelas ou colunas nulas.
 
 ## ✨ Funcionalidades Atuais
 
-- **Autenticação e Segurança:** Fluxo completo de Login/Logout integrado ao Supabase Auth.
-- **Proteção de Rotas:** Redirecionamento automático de usuários não autenticados, blindando o acesso ao painel.
-- **Arquitetura Multi-Tenant:** Isolamento de dados no banco, garantindo que o usuário visualize e gerencie apenas os projetos criados por ele.
-- **Gestão de Projetos:** Criação dinâmica de novos projetos diretamente pela interface via Modais interativos.
-- **Rotas Dinâmicas de Espaço de Trabalho:** Geração automática de páginas exclusivas para cada projeto (`/projetos/[id]`), organizando o fluxo de trabalho.
-- **Gestão de Entregáveis:** Adição de links externos e materiais de aprovação dentro do espaço de cada projeto, salvos em tempo real no banco de dados.
-- **Sidebar Dinâmica:** Barra lateral profissional que identifica o usuário logado e permite navegação fluida entre Dashboard e Projetos.
-- **Interface Premium:** Dark Mode nativo inspirado em ferramentas de alto padrão (Vercel/Linear), com feedbacks visuais elegantes (hover states, empty states e transições suaves).
+- **Autenticação e Segurança:** Fluxo completo de Login/Logout integrado ao Supabase Auth com proteção de rotas.
+- **Arquitetura Multi-Tenant:** Isolamento de dados no banco, garantindo que o usuário visualize e gerencie apenas os seus projetos.
+- **Rotas Dinâmicas de Espaço de Trabalho:** Geração automática de páginas exclusivas para cada projeto (`/projetos/[id]`).
+- **Gestão de Entregáveis:** Adição de links externos e materiais de aprovação salvos em tempo real.
+- **Sidebar Dinâmica:** Barra lateral profissional com Active States (identificação inteligente da página atual) e integração de marca visual própria.
 
-## 🎨 Interface e Experiência
+## 🎨 Interface e Experiência (UX/UI Premium)
 
-A interface foi construída seguindo princípios de design premium:
+A interface foi refinada com inspiração no padrão de excelência do ecossistema Next.js (como Linear e Vercel), focando em fluidez e percepção de velocidade:
 
-- **Dark Mode Nativo:** Estética escura e foco no conteúdo.
-- **Componentização:** Uso rigoroso de componentes atômicos para garantir consistência visual.
-- **Responsividade:** Experiência fluida tanto em desktops quanto em dispositivos móveis.
+- **Dark Mode Nativo:** Estética "Zinc-Black" profunda e minimalista.
+- **Alien Glow & Hover States:** Micro-interações avançadas nos cards, revelando bordas iluminadas e elementos de ação (setas) apenas no foco do usuário.
+- **Skeleton Loading:** Substituição de textos estáticos de carregamento por telas "fantasmas" pulsantes, eliminando saltos bruscos de layout (Cumulative Layout Shift) e aumentando a velocidade percebida.
+- **Notificações Toast (Sonner):** Feedbacks de sucesso e erro não intrusivos, com design moderno e animações suaves de entrada e saída.
+- **Tipografia Otimizada:** Utilização das fontes `Geist` e `Geist Mono` para máxima legibilidade e estética sofisticada.
 
 ## 🚀 Como rodar o projeto localmente
 
