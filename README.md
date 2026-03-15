@@ -18,21 +18,24 @@ Este projeto utiliza o que há de mais moderno e performático no ecossistema de
 O diferencial técnico do Lyncar é a sua **Arquitetura de Banco de Dados Híbrida**. Em vez de ficarmos presos apenas ao SQL rígido, combinamos o melhor dos dois mundos:
 
 1.  **SQL Estruturado (Relacional):** Para garantir a integridade de dados fundamentais como `Agencias`, `Clientes` e `Projetos`.
-2.  **JSONB (NoSQL Flexível):** A tabela de `Entregáveis` utiliza uma coluna JSONB. Isso permite que cada projeto tenha tipos de entrega únicos (links do Figma, arquivos PDF, faturas, blocos de texto) sem a necessidade de criar dezenas de tabelas ou colunas nulas.
+2.  **JSONB (NoSQL Flexível):** A tabela de `Entregáveis` utiliza uma coluna JSONB. Isso permite que cada projeto tenha tipos de entrega únicos (links do Figma, vídeos do YouTube, arquivos PDF, faturas, blocos de texto) sem a necessidade de criar dezenas de tabelas ou colunas nulas.
 
 ## ✨ Funcionalidades Atuais
 
-- **Interface Premium Base:** Layout escuro (Dark Mode) responsivo configurado.
-- **Autenticação Real:** Fluxo completo de Login e Logout integrado ao Supabase Auth, permitindo acesso apenas a usuários cadastrados.
-- **Sidebar de Navegação:** Barra lateral profissional com navegação entre Dashboard, Projetos e Configurações.
-- **Integração com Banco de Dados:** Conexão Server-Side direta e segura com o Supabase utilizando `@supabase/ssr`.
-- **Dashboard Dinâmico:** Leitura em tempo real de projetos e entregáveis, transformando dados `JSONB` em elementos visuais (renderização de paletas de cores, comentários e links externos).
+- **Autenticação e Segurança:** Fluxo completo de Login/Logout integrado ao Supabase Auth.
+- **Proteção de Rotas:** Redirecionamento automático de usuários não autenticados, blindando o acesso ao painel.
+- **Arquitetura Multi-Tenant:** Isolamento de dados no banco, garantindo que o usuário visualize e gerencie apenas os projetos criados por ele.
+- **Gestão de Projetos:** Criação dinâmica de novos projetos diretamente pela interface via Modais interativos.
+- **Rotas Dinâmicas de Espaço de Trabalho:** Geração automática de páginas exclusivas para cada projeto (`/projetos/[id]`), organizando o fluxo de trabalho.
+- **Gestão de Entregáveis:** Adição de links externos e materiais de aprovação dentro do espaço de cada projeto, salvos em tempo real no banco de dados.
+- **Sidebar Dinâmica:** Barra lateral profissional que identifica o usuário logado e permite navegação fluida entre Dashboard e Projetos.
+- **Interface Premium:** Dark Mode nativo inspirado em ferramentas de alto padrão (Vercel/Linear), com feedbacks visuais elegantes (hover states, empty states e transições suaves).
 
 ## 🎨 Interface e Experiência
 
 A interface foi construída seguindo princípios de design premium:
 
-- **Dark Mode Nativo:** Estética escura inspirada em ferramentas como Vercel e Linear.
+- **Dark Mode Nativo:** Estética escura e foco no conteúdo.
 - **Componentização:** Uso rigoroso de componentes atômicos para garantir consistência visual.
 - **Responsividade:** Experiência fluida tanto em desktops quanto em dispositivos móveis.
 
